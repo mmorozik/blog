@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.hidden {
+  display: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #EBEEF3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+.link-green {
+  border: 1px solid #52C41A;
+  border-radius: 5px;
+  color: #52C41A;
+  padding: 6px 18px;
+  cursor: pointer;
+}
+
+.link-border {
+  color: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 6px 18px;
+}
+
+.btn {
+  max-width: 150px;
+  max-height: 25px;
+  padding: 0px 30px;
+  border-radius: 4px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+
+.btn-add {
+  border: 1px solid #1890FF;
+  color: #1890FF;
+}
+
+.btn-delete {
+  border: 1px solid #F5222D;
+  color: #F5222D;
+}
+
+.btn-edit {
+  border: 1px solid #52C41A;
+  color: #52C41A;
 }

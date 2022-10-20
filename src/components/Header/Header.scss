@@ -1,0 +1,34 @@
+.header {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 941px;
+  height: 80px;
+  background: #FFFFFF;
+  padding: 0 22px;
+  margin-bottom: 26px;
+
+  &__button {
+
+    :first-child {
+      margin-right: 19px;
+    }
+  }
+
+  &__username {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85);
+    margin-right: 15px;
+  }
+
+  &__avatar {
+    margin-right: 27px;
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,100 @@
+.article {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  background: #FFFFFF;
+  border-radius: 5px;
+  width: 941px;
+  margin-bottom: 26px;
+  padding: 10px 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 19px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    color: #1890FF;
+    margin-right: 13px;
+  }
+
+  &__like {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  &__like-count {
+    font-size: 12px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.75);
+  }
+
+  &__tag {
+    display: flex;
+
+    div {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 2px;
+      padding: 2px 5px;
+      font-size: 12px;
+      line-height: 15px;
+      color: rgba(0, 0, 0, 0.5);
+      margin-right: 8px;
+    }
+  }
+
+  &__user {
+    display: flex;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+  }
+
+  &__user-nickname {
+    text-align: end;
+    font-size: 18px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  &__user-date {
+    text-align: end;
+    font-size: 12px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__user-avatar {
+    width: 46px;
+    height: 46px;
+
+    img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__body {
+    width: 682px;
+    padding-left: 22px;
+
+    span {
+      font-size: 12px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}
