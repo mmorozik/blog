@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { format } from 'date-fns'
-import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import unlike from '../img/unlike.svg'
 import like from '../img/like.svg'
@@ -10,9 +10,11 @@ import { followArticle } from '../../store/articleSlice'
 
 const Article = (props) => {
   const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.user)
   const { title, favoritesCount, tagList, slug, author, createdAt, description, favorited } = props.articleData
-  let [count, setCount] = useState(favoritesCount)
+  const [count, setCount] = useState(favoritesCount)
   const [liked, setLiked] = useState(favorited)
+  const [authLike, setAuthLike] = useState(false)
   const titleLengthFix = () => {
     if (title.length > 40) return title.slice(0, title.slice(0, 40).lastIndexOf(' ')) + '...'
     return title
@@ -30,13 +32,17 @@ const Article = (props) => {
     )
   })
   const toggleLike = (slug, type) => {
-    dispatch(followArticle(slug, type))
-    if (liked) {
-      setCount((state) => state - 1)
+    if (user) {
+      dispatch(followArticle(slug, type))
+      if (liked) {
+        setCount((state) => state - 1)
+      } else {
+        setCount((state) => state + 1)
+      }
+      setLiked((state) => !state)
     } else {
-      setCount((state) => state + 1)
+      setAuthLike(true)
     }
-    setLiked((state) => !state)
   }
   const date = format(new Date(createdAt), 'MMMM d, yyyy')
   const heart = liked ? (
@@ -44,7 +50,7 @@ const Article = (props) => {
   ) : (
     <img src={unlike} className="article__like" onClick={() => toggleLike(slug, 'POST')} />
   )
-
+  if (authLike) return <Redirect to="/sign-in" />
   return (
     <div className="article">
       <div className="article__header">

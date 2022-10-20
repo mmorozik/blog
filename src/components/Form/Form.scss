@@ -44,6 +44,7 @@
   &__checkbox {
     display: flex;
     justify-content: start;
+    flex-direction: row;
 
     input {
       height: 16px;

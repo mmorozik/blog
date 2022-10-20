@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
-const { token } = JSON.parse(localStorage.getItem('user'))
+let token
+if (localStorage.getItem('user')) token = JSON.parse(localStorage.getItem('user')).token
 
 export const fetchArticle = createAsyncThunk('article/fetchArticle', async function (page, { rejectWithValue }) {
   try {
