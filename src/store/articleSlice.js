@@ -133,7 +133,7 @@ const artivlrSlice = createSlice({
     statusPage: null,
     articleStatus: false,
     totalActicle: 0,
-    pageCurrent: 0,
+    pageCurrent: 1,
     errorCreate: false,
   },
   reducers: {
@@ -144,6 +144,9 @@ const artivlrSlice = createSlice({
     },
     addArticlePage(state, action) {
       state.targetArticle = action.payload.article
+    },
+    togglePageCurrent(state, action) {
+      state.pageCurrent = action.payload
     },
     onLoading(state) {
       state.isLoading = true
@@ -193,5 +196,5 @@ const artivlrSlice = createSlice({
 
 export default artivlrSlice.reducer
 
-export const { addArticle, onError, addArticlePage, onLoading, onErrorCreate, toggleArticleStatus } =
+export const { addArticle, onError, addArticlePage, onLoading, onErrorCreate, toggleArticleStatus, togglePageCurrent } =
   artivlrSlice.actions

@@ -19,6 +19,7 @@ const App = () => {
         <Header />
         <Route exact path="/" render={() => <ArticleList />} />
         <Route exact path="/articles/" render={() => <ArticleList />} />
+        <Route exact path="/articles/page/:id" render={({ match }) => <ArticleList id={+match.params.id} />} />
         <Route exact path="/articles/:slug/" render={({ match }) => <ArticlePage slug={match.params.slug} />} />
         <Route exact path="/sign-up" render={() => <CreateAccount />} />
         <Route exact path="/sign-in" render={() => <Authorization />} />

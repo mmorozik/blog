@@ -22,7 +22,6 @@ const ArticlePage = (props) => {
   }
   const classDelete = deleteState ? 'article-page__delete' : 'article-page__delete hidden'
   const onDeleted = (slug) => {
-    console.log(slug)
     dispatch(deletedArticle(slug))
   }
   const edit =
